@@ -6,13 +6,25 @@ namespace MoodAnalyserApp
 {
     public class MoodAnalyser
     {
-        public string AnalyseMood(string msg)
+        public string message;
+        //Default constructor
+        public MoodAnalyser() { }
+        //Parameterised Constructor
+        public MoodAnalyser(string message)
         {
-            if (msg.ToUpper().Contains("SAD"))
+            this.message = message;
+        }
+        public string AnalyseMood()
+        {
+            if (message.ToUpper().Contains("SAD"))
             {
                 return "SAD";
             }
-            return "HAPPY";
+            else if (message.ToUpper().Contains("HAPPY"))
+            {
+                return "HAPPY";
+            }
+            return null;
         }
     }
 }

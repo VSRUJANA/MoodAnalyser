@@ -8,9 +8,9 @@ namespace MoodAnalyserApp
         {
             Console.WriteLine("Welcome to Mood Analyser App!");
             Console.WriteLine("Enter message");
-            string message = Console.ReadLine();
             MoodAnalyser m = new MoodAnalyser();
-            Console.WriteLine("Mood : " + m.AnalyseMood(message));
+            m.message = Console.ReadLine();
+            Console.WriteLine("Mood : " + m.AnalyseMood());
         }
     }
 }
