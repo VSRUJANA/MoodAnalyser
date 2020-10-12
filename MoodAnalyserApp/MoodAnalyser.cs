@@ -16,15 +16,22 @@ namespace MoodAnalyserApp
         }
         public string AnalyseMood()
         {
-            if (message.ToUpper().Contains("SAD"))
+            try
             {
-                return "SAD";
+                if (message.ToUpper().Contains("SAD"))
+                {
+                    return "SAD";
+                }
+                else
+                {
+                    return "HAPPY";
+                }
             }
-            else if (message.ToUpper().Contains("HAPPY"))
+            catch (NullReferenceException)
             {
                 return "HAPPY";
             }
-            return null;
         }
     }
 }
+
