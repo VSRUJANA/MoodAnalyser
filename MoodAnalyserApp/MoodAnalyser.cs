@@ -18,18 +18,18 @@ namespace MoodAnalyserApp
         {
             try
             {
+                if (message.Equals(string.Empty))
+                {
+                    throw new MoodAnalyserCustomException(MoodAnalyserCustomException.ExceptionType.EMPTY_MESSAGE, "Mood should not be empty");
+                }
                 if (message.ToUpper().Contains("SAD"))
-                {
                     return "SAD";
-                }
                 else
-                {
                     return "HAPPY";
-                }
             }
             catch (NullReferenceException)
             {
-                return "HAPPY";
+                throw new MoodAnalyserCustomException(MoodAnalyserCustomException.ExceptionType.NULL_MESSAGE, "Mood should not be null");
             }
         }
     }
