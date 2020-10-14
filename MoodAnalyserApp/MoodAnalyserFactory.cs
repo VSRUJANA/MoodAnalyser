@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 
 namespace MoodAnalyserApp
 {
-    class MoodAnalyserFactory
+    public class MoodAnalyserFactory
     {
         public static object MoodAnalyseObjectCreation(string className, string constructorName)
         {

@@ -11,6 +11,7 @@ namespace MoodAnalyserApp
             MoodAnalyser m = new MoodAnalyser();
             m.message = Console.ReadLine();
             Console.WriteLine("Mood : " + m.AnalyseMood());
+            Console.ReadKey();
         }
     }
 }
