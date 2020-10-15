@@ -73,7 +73,7 @@ namespace MoodAnalyserTest
             try
             {
                 object expected = new MoodAnalyser();
-                object actual = MoodAnalyserFactory.MoodAnalyseObjectCreation("abc", "abc");
+                object actual = MoodAnalyserFactory.MoodAnalyseObjectCreation("WrongClass", "MoodAnalyser");
             }
             catch (MoodAnalyserCustomException e)
             {
@@ -87,13 +87,14 @@ namespace MoodAnalyserTest
             try
             {
                 object expected = new MoodAnalyser();
-                object actual = MoodAnalyserFactory.MoodAnalyseObjectCreation("Mood", "MoodAnalyser");
+                object actual = MoodAnalyserFactory.MoodAnalyseObjectCreation("WrongConstructor", "WrongConstructor");
             }
             catch (MoodAnalyserCustomException e)
             {
-                Assert.AreEqual("Constructor not found", e.Message);
+                Assert.AreEqual("No such Constructor found", e.Message);
             }
         }
     }
 }
+
 
