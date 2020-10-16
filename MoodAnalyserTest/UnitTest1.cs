@@ -130,6 +130,14 @@ namespace MoodAnalyserTest
                 Assert.AreEqual("No such Constructor found", e.Message);
             }
         }
+
+        [TestMethod]
+        public void GivenMoodAnalyserWithoutMessage_WhenAnalysed_UsingParameterizedConstructor_ShouldReturnMoodAnalyserObject()
+        {
+            object expected = new MoodAnalyser();
+            object actual = MoodAnalyserFactory.CreateMoodAnalyserUsingParameterizedConstructor("MoodAnalyserApp.MoodAnalyser", "MoodAnalyser");
+            Assert.AreEqual(expected.GetType(), actual.GetType());
+        }
     }
 }
 

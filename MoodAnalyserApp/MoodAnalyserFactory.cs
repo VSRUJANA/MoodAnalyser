@@ -28,7 +28,7 @@ namespace MoodAnalyserApp
                 throw new MoodAnalyserCustomException(MoodAnalyserCustomException.ExceptionType.NO_SUCH_CLASS, "No such class found");
             }
         }
-        public static object CreateMoodAnalyserUsingParameterizedConstructor(string className, string constructorName, string message)
+        public static object CreateMoodAnalyserUsingParameterizedConstructor(string className, string constructorName, string message="")
         {
             Type type = typeof(MoodAnalyser);
             if (type.Name.Equals(className) || type.FullName.Equals(className))
